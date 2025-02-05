@@ -1,0 +1,14 @@
+.DS_Store
+.vscode
+build
+graphs
+outputs
+doc
+log.txt
+*.e
+*.o
+compile_flags.txt
+.cache
+node_modules
+log
+docs/_build

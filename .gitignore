@@ -1,0 +1,6 @@
+log
+.cache
+.vscode
+build
+hostfile_mpi
+RUN
