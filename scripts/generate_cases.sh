@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-project_root="/home/Aaron/NextACC"
-expname="0205_2speed"
+project_root="/home/Aaron/NextACC_pub"
+expname="0205_2speed_crad3600_qv2d095"
 csswm_gravity=0.4
 time_values=(3600)
 
@@ -42,7 +42,7 @@ VVM_ZRANGE=20000                                      # Domain for z [m]
 VVM_DT=3
 VVM_DX=200
 VVM_DZ=200                                            # Should be same as dx
-VVM_TIMEEND=20000                                     # Integration Time [s]                                
+VVM_TIMEEND=60000                                     # Integration Time [s]                                
 VVM_OUTPUTSTEP=50                                     # Output frequency                 
 VVM_MOISTURE_NUDGE_TIME=0                             # VVM moisture nudging time scale, if it is 0, the nudge will be closed.
 EOL
@@ -53,7 +53,7 @@ EOL
 #SBATCH -J ${case_name}
 #SBATCH -N 1
 #SBATCH -c 5
-#SBATCH --nodelist=mogamd
+#SBATCH --nodelist=node01
 #SBATCH -o ${case_name}_%j.o
 #SBATCH -e ${case_name}_%j.e
 #SBATCH --mail-type=ALL

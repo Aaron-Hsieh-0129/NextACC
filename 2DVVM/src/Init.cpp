@@ -28,7 +28,7 @@ void vvm::Init::Init1d(vvm &model) {
         // init qvb, tvb
         for (int k = 1; k <= model.nz-2; k++) {
             #if defined(WATER)
-                model.qvb[k] = GetQVB(k, model.dz) * 0.95;
+                model.qvb[k] = GetQVB(k, model.dz);
                 model.qvb0[k] = model.qvb[k];
             #else
                 model.qvb[k] = 0.;
@@ -161,7 +161,7 @@ void vvm::Init::Init2d(vvm &model) {
             // init qv: where th != 0, qv = qvs
             for (int i = 1; i <= model.nx-2; i++) {
                 for (int k = 1; k <= model.nz-2; k++) {
-                    model.qv[i][k] = model.qvm[i][k] = model.qvb[k];
+                    model.qv[i][k] = model.qvm[i][k] = model.qvb[k] * 0.95;
                     model.qc[i][k] = model.qcp[i][k] = model.qcm[i][k] = 0.;
                     model.qr[i][k] = model.qrp[i][k] = model.qrm[i][k] = 0.;
                 }

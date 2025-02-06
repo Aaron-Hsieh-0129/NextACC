@@ -2,7 +2,7 @@
 
 time_values=(3600)
 seed_values=$(seq 0 10 0)
-expname="0205_2speed"
+expname="0205_2speed_crad3600_qv2d095"
 
 # Iterate through the seeds first
 for seed in $seed_values; do
@@ -11,7 +11,7 @@ for seed in $seed_values; do
     # Then iterate through each time for the current seed
     for time in "${time_values[@]}"; do
         # Construct the expected folder pattern using the time and seed
-        for case in /home/Aaron/NextACC/RUN/${expname}/200_"$time"_*"_seed$seed"_*; do
+        for case in /home/Aaron/NextACC_pub/RUN/${expname}/200_"$time"_*"_seed$seed"_*; do
             if [ -d "$case" ]; then  # Check if the path is a directory
                 echo "Running case with time: $time and seed: $seed in folder: $case"
                 cd "$case" || { echo "Failed to enter $case"; continue; }  # Change to the case directory

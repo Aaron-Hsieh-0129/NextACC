@@ -302,7 +302,7 @@ public:
     double PSURF;                            ///< From Config_VVM given by users.
     double addforcingtime;                   ///< From Config_VVM given by users.
     int CASE;                                ///< From Config_VVM given by users.
-    double CRAD = 1. / 3600.;                   ///< From Config_VVM given by users.
+    double CRAD = 1. / 100.;                 ///< From Config_VVM given by users.
 
     // 0D variables
     int step = 0;                            ///< The current time step.
